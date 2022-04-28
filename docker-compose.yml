@@ -1,0 +1,30 @@
+version: "3"
+services:
+  prometheus:
+    image: prom/prometheus:v2.35.0
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  snmp-exporter:
+    image: prom/snmp-exporter:v0.20.0
+    ports:
+      - 9116:9116
+    volumes:
+      - ./snmp_openam.yml:/etc/snmp_exporter/snmp.yml:ro
+      
+  openam:
+    image: openidentityplatform/openam:latest
+    ports:
+      - 8080:8080
+      - 8085:8085
+    environment:
+      - CATALINA_HOME=/usr/local/tomcat
+      - PATH=/usr/local/tomcat/bin:$PATH
+      - OPENAM_USER=openam
+      - OPENAM_DATA_DIR=/usr/openam/config
+      - CATALINA_OPTS=-Xmx4g -server -Dcom.iplanet.services.configpath=/usr/openam/config -Dcom.sun.identity.configuration.directory=/usr/openam/config
+    volumes:
+      - ./openam-data:/usr/openam/config
+

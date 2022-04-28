@@ -1,0 +1,2298 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+openam:
+  walk:
+  - 1.3.6.1.4.1
+  metrics:
+  - name: ssoServerPort
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.3
+    type: gauge
+    help: Port number of this server - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.3
+  - name: ssoServerMemberOfSite
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.4
+    type: gauge
+    help: SiteID of which this server is a member - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.4
+  - name: serverId
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.1
+    type: gauge
+    help: ServerID - unique ID for the server - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.1
+    indexes:
+    - labelname: serverId
+      type: gauge
+  - name: serverPort
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.4
+    type: gauge
+    help: Server Port - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.4
+    indexes:
+    - labelname: serverId
+      type: gauge
+  - name: serverStatus
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.5
+    type: gauge
+    help: 'Server State as seen by this server : 0 = Down, 1 = Up, 2 = NotAccessible
+      - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.1.1.5'
+    indexes:
+    - labelname: serverId
+      type: gauge
+  - name: siteId
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.2.1.1
+    type: gauge
+    help: Site ID - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.2.1.1
+    indexes:
+    - labelname: siteId
+      type: gauge
+  - name: siteState
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.2.1.3
+    type: gauge
+    help: 'Site State as seen by this server : 0 = Down, 1 = Up - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.2.1.3'
+    indexes:
+    - labelname: siteId
+      type: gauge
+  - name: siteMapIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.3.1.1
+    type: gauge
+    help: Site Map index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.3.1.1
+    indexes:
+    - labelname: siteMapIndex
+      type: gauge
+  - name: siteMapId
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.3.1.2
+    type: gauge
+    help: Site ID to which this server maps - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.8.3.1.2
+    indexes:
+    - labelname: siteMapIndex
+      type: gauge
+  - name: ssoServerRealmIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.9.1.1
+    type: gauge
+    help: Realm index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.9.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+  - name: authenticationSuccessCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.1
+    type: counter
+    help: Count of successful authentications - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.1
+  - name: authenticationFailureCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.2
+    type: counter
+    help: Count of unsuccessful authentications - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.2
+  - name: authenticationSuccessRate
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.3
+    type: gauge
+    help: Current Auth success rate / second based on a fixed preconfigured window.
+      - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.3
+  - name: authenticationFailureRate
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.4
+    type: gauge
+    help: Current Auth failure rate / second based on a fixed preconfigured window.
+      - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.4
+  - name: authModuleIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.1
+    type: gauge
+    help: Realm index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: authModuleIndex
+      type: gauge
+  - name: authModuleSuccessCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.4
+    type: counter
+    help: Successful authentication count - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.4
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: authModuleIndex
+      type: gauge
+  - name: authModuleFailureCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.5
+    type: counter
+    help: Authentication failure count - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.10.5.1.5
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: authModuleIndex
+      type: gauge
+  - name: sessionActiveCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.1
+    type: counter
+    help: Current number of sessions on this server - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.1
+  - name: sessionCreatedCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.2
+    type: counter
+    help: Sessions created since server startup. - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.2
+  - name: sessionValidationsCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.3
+    type: counter
+    help: Count of session validations - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.3
+  - name: sessionNotifCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.4
+    type: counter
+    help: Session notifications emitted by this server - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.4
+  - name: sessionNotifListnrCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.5
+    type: counter
+    help: Number of registered session notification listeners - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.5
+  - name: sessionAveSessSize
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.6
+    type: gauge
+    help: Session size metrics - for approximate memory usage - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.11.6
+  - name: loggingMaxLogSize
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.3
+    type: counter
+    help: Maximum flat file log size in bytes - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.3
+  - name: loggingNumHistFiles
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.4
+    type: counter
+    help: Number of flat file history files - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.4
+  - name: loggingBufferTime
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.7
+    type: counter
+    help: Buffer time in seconds - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.7
+  - name: loggingBufferSize
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.8
+    type: counter
+    help: Buffer size in number of records - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.8
+  - name: loggingLoggers
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.9
+    type: gauge
+    help: Count of logger instances - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.9
+  - name: loggingRecsRejected
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.10
+    type: counter
+    help: Count of LogRecords log requests the Logging service has rejected for failing
+      authorization - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.10
+  - name: loggingHdlrIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.1
+    type: gauge
+    help: Logging handler index - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.1
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrRqtCt
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.3
+    type: counter
+    help: Count of log records requested logged - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.3
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrSuccessCt
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.4
+    type: counter
+    help: Count of log records successfully logged - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.4
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrFailureCt
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.5
+    type: counter
+    help: Count of log records unsuccessfully logged - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.5
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrDroppedCt
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.6
+    type: counter
+    help: Count of log records dropped - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.6
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrConnRqts
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.7
+    type: counter
+    help: Count of Database handler connection requests - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.7
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrConnMade
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.8
+    type: counter
+    help: Count of Database handler successful connections - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.8
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: loggingHdlrConnFailed
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.9
+    type: counter
+    help: Count of Database handler connection failures - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.12.11.1.9
+    indexes:
+    - labelname: loggingHdlrIndex
+      type: gauge
+  - name: policyEvalsIn
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.13.2
+    type: counter
+    help: Number of policy evaluations in - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.13.2
+  - name: policyEvalsOut
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.13.3
+    type: counter
+    help: Number of policy evaluations out - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.13.3
+  - name: idRepoGetRqts
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.1
+    type: counter
+    help: Number of get requests - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.1
+  - name: idRepoCacheEntries
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.2
+    type: counter
+    help: Number of cache entries - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.2
+  - name: idRepoCacheHits
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.3
+    type: counter
+    help: Number of cache hits - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.3
+  - name: idRepoSearchRqts
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.4
+    type: counter
+    help: Number of search requests - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.4
+  - name: idRepoSearchCacheHits
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.5
+    type: counter
+    help: Number of search cache hits - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.15.5
+  - name: sAML1CacheIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.1
+    type: gauge
+    help: Cache index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.1
+    indexes:
+    - labelname: sAML1CacheIndex
+      type: gauge
+  - name: sAML1CacheReads
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.3
+    type: counter
+    help: Count of SAML1 Cache reads - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.3
+    indexes:
+    - labelname: sAML1CacheIndex
+      type: gauge
+  - name: sAML1CacheWrites
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.4
+    type: counter
+    help: Count of SAML1 Cache writes - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.4
+    indexes:
+    - labelname: sAML1CacheIndex
+      type: gauge
+  - name: sAML1CacheHits
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.5
+    type: counter
+    help: Count of SAML1 Cache hits - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.5
+    indexes:
+    - labelname: sAML1CacheIndex
+      type: gauge
+  - name: sAML1CacheMisses
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.6
+    type: counter
+    help: Count of SAML1 Cache misses - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.1.1.6
+    indexes:
+    - labelname: sAML1CacheIndex
+      type: gauge
+  - name: sAML1EndPointIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.1
+    type: gauge
+    help: Realm index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.1
+    indexes:
+    - labelname: sAML1EndPointIndex
+      type: gauge
+  - name: sAML1EndPointRqtIn
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.4
+    type: counter
+    help: Count of SAML1 EndPoint Requests In - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.4
+    indexes:
+    - labelname: sAML1EndPointIndex
+      type: gauge
+  - name: sAML1EndPointRqtOut
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.5
+    type: counter
+    help: Count of SAML1 EndPoint Requests Out - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.5
+    indexes:
+    - labelname: sAML1EndPointIndex
+      type: gauge
+  - name: sAML1EndPointRqtFailed
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.6
+    type: counter
+    help: Count of SAML1 EndPoint Requests Failed - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.6
+    indexes:
+    - labelname: sAML1EndPointIndex
+      type: gauge
+  - name: sAML1EndPointRqtAborted
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.7
+    type: counter
+    help: Count of SAML1 EndPoint Requests Aborted - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.2.1.7
+    indexes:
+    - labelname: sAML1EndPointIndex
+      type: gauge
+  - name: sAML1TrustPrtnrIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.3.1.1
+    type: gauge
+    help: Trusted Partner index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.16.3.1.1
+    indexes:
+    - labelname: sAML1TrustPrtnrIndex
+      type: gauge
+  - name: sAML2IDPSessionCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.2
+    type: counter
+    help: Count of IDP Sessions - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.2
+  - name: sAML2FedSessionCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.3
+    type: counter
+    help: Count of Federation Sessions - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.3
+  - name: sAML2HostedIDPCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.4
+    type: counter
+    help: Count of This Realm's Hosted IDPs - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.4
+  - name: sAML2RemoteIDPCount
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.5
+    type: counter
+    help: Count of This Realm's Remote IDPs - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.5
+  - name: sAML2IDPIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.1
+    type: gauge
+    help: IDP index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPRqtsRcvd
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.3
+    type: counter
+    help: Requests received for this IDP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.3
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPInvalRqtsRcvd
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.4
+    type: counter
+    help: Invalid requests received for this IDP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.4
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPAssertionsIssued
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.5
+    type: counter
+    help: Assertions issued by this IDP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.5
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPArtifactsIssued
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.6
+    type: counter
+    help: Artifacts issued by this IDP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.6
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPAssertionsInCache
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.7
+    type: counter
+    help: Assertions in this IDP's cache - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.7
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2IDPArtifactsInCache
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.8
+    type: counter
+    help: Artifacts in this IDP's cache - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.6.1.8
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2IDPIndex
+      type: gauge
+  - name: sAML2SPIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.1
+    type: gauge
+    help: SP index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2SPIndex
+      type: gauge
+  - name: sAML2SPRqtsSent
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.3
+    type: counter
+    help: Requests sent by this SP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.3
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2SPIndex
+      type: gauge
+  - name: sAML2SPValidAssertionsRcvd
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.4
+    type: counter
+    help: Valid Assertions received by this SP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.4
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2SPIndex
+      type: gauge
+  - name: sAML2SPInvalidArtifactsRcvd
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.5
+    type: counter
+    help: Invalid Assertions received by this SP - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.17.7.1.5
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: sAML2SPIndex
+      type: gauge
+  - name: fedCOTIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.18.1.1.1
+    type: gauge
+    help: COT index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.18.1.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: fedCOTIndex
+      type: gauge
+  - name: fedCOTMemberIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.18.2.1.1
+    type: gauge
+    help: COT index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.18.2.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: fedCOTIndex
+      type: gauge
+    - labelname: fedCOTMemberIndex
+      type: gauge
+  - name: fedEntityIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.19.1.1.1
+    type: gauge
+    help: Entity index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.19.1.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: fedEntityIndex
+      type: gauge
+  - name: iDFFAssertions
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.2
+    type: counter
+    help: Number of assertions for all ID-FF providers - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.2
+  - name: iDFFArtifacts
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.3
+    type: counter
+    help: Number of artifacts for all ID-FF providers - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.3
+  - name: iDFFUserIDSessionList
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.4
+    type: counter
+    help: Number of entries in UserID Session List Map for all ID-FF Providers - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.4
+  - name: iDFFIdAuthnRqt
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.5
+    type: counter
+    help: Number of entries in ID Authentication Request Map for all ID-FF Providers
+      - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.5
+  - name: iDFFIdLocalSessToken
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.6
+    type: counter
+    help: Number of entries in ID Local Session Token Map for all ID-FF Providers
+      - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.6
+  - name: iDFFIdDestn
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.7
+    type: counter
+    help: Number of entries in ID Destination Map for all ID-FF Providers - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.7
+  - name: iDFFRelayState
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.8
+    type: counter
+    help: Number of entries in Relay State Map for all ID-FF Providers - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.20.8
+  - name: policyWebAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.1.1.1
+    type: gauge
+    help: Policy Web Agent Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.1.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: policyWebAgentIndex
+      type: gauge
+  - name: policyWebGroupIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.2.1.1
+    type: gauge
+    help: Policy Web Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.2.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: policyWebGroupIndex
+      type: gauge
+  - name: policyJ2EEAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.3.1.1
+    type: gauge
+    help: Policy J2EE Agent Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.3.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: policyJ2EEAgentIndex
+      type: gauge
+  - name: policyJ2EEGroupIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.4.1.1
+    type: gauge
+    help: Policy J2EE Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.4.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: policyJ2EEGroupIndex
+      type: gauge
+  - name: policy22AgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.5.1.1
+    type: gauge
+    help: Policy 2.2 Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.21.5.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: policy22AgentIndex
+      type: gauge
+  - name: wssAgentsWSCAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.1.1.1
+    type: gauge
+    help: Web Security Service WSC Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.1.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsWSCAgentIndex
+      type: gauge
+  - name: wssAgentsWSCAgtGrpIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.2.1.1
+    type: gauge
+    help: Web Security Service WSC Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.2.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsWSCAgtGrpIndex
+      type: gauge
+  - name: wssAgentsWSPAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.3.1.1
+    type: gauge
+    help: Web Security Service WSP Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.3.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsWSPAgentIndex
+      type: gauge
+  - name: wssAgentsWSPAgtGrpIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.4.1.1
+    type: gauge
+    help: Web Security Service WSP Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.4.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsWSPAgtGrpIndex
+      type: gauge
+  - name: wssAgentsSTSAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.5.1.1
+    type: gauge
+    help: Web Security Service STS Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.5.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsSTSAgentIndex
+      type: gauge
+  - name: wssAgentsSTSAgtGrpIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.6.1.1
+    type: gauge
+    help: Web Security Service STS Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.6.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsSTSAgtGrpIndex
+      type: gauge
+  - name: wssAgentsDSCAgentIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.7.1.1
+    type: gauge
+    help: Web Security Service Discovery Agent index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.7.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsDSCAgentIndex
+      type: gauge
+  - name: wssAgentsDSCAgtGrpIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.8.1.1
+    type: gauge
+    help: Web Security Service Discovery Agent Group index into table - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.22.8.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: wssAgentsDSCAgtGrpIndex
+      type: gauge
+  - name: numPolicies
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.1
+    type: gauge
+    help: Total number of policies - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.1
+  - name: numReferrals
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.2
+    type: gauge
+    help: Total number of referrals - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.2
+  - name: numCachedPolicies
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.3
+    type: gauge
+    help: Total number of cached policies - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.3
+  - name: numCachedReferrals
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.4
+    type: gauge
+    help: Total number of cached policies - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.4
+  - name: entitlementPolicyStatsIndex
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.1
+    type: gauge
+    help: Entitlement Policy Stat Index - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.1
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: entitlementPolicyStatsIndex
+      type: gauge
+  - name: entitlementPolicyCaches
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.3
+    type: gauge
+    help: Number of Cached Policies - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.3
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: entitlementPolicyStatsIndex
+      type: gauge
+  - name: entitlementReferralCaches
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.4
+    type: gauge
+    help: Number of Cached Referrals - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.23.5.1.4
+    indexes:
+    - labelname: ssoServerRealmIndex
+      type: gauge
+    - labelname: entitlementPolicyStatsIndex
+      type: gauge
+  - name: connRequestWaitTimeHighWaterMark
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.1
+    type: counter
+    help: High watermark for request wait time - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.1
+  - name: connRequestWaitTimeLowWaterMark
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.2
+    type: counter
+    help: Low watermark for request wait time - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.2
+  - name: connRequestWaitTimeCurrent
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.3
+    type: counter
+    help: Current request wait time - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.3
+  - name: numConnUsedHighWaterMark
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.4
+    type: gauge
+    help: Maximum number of concurrent connections in use - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.4
+  - name: numConnUsedLowWaterMark
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.5
+    type: gauge
+    help: Minimum number of concurrent connections in use - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.5
+  - name: numConnUsedCurrent
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.6
+    type: gauge
+    help: Current number of connections in use - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.6
+  - name: numConnReleased
+    oid: 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.7
+    type: gauge
+    help: Total number of connections returned to the pool - 1.3.6.1.4.1.42.2.230.3.1.1.2.1.24.7
+  - name: processIndex
+    oid: 1.3.6.1.4.1.2021.1.1
+    type: gauge
+    help: Reference Index for each observed process. - 1.3.6.1.4.1.2021.1.1
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: processMin
+    oid: 1.3.6.1.4.1.2021.1.3
+    type: gauge
+    help: The minimum number of processes that should be running - 1.3.6.1.4.1.2021.1.3
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: processMax
+    oid: 1.3.6.1.4.1.2021.1.4
+    type: gauge
+    help: The maximum number of processes that should be running - 1.3.6.1.4.1.2021.1.4
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: processCount
+    oid: 1.3.6.1.4.1.2021.1.5
+    type: gauge
+    help: The number of current processes running with the name in question. - 1.3.6.1.4.1.2021.1.5
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: processErrorFlag
+    oid: 1.3.6.1.4.1.2021.1.100
+    type: gauge
+    help: A Error flag to indicate trouble with a process - 1.3.6.1.4.1.2021.1.100
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: processErrFix
+    oid: 1.3.6.1.4.1.2021.1.102
+    type: gauge
+    help: Setting this to one will try to fix the problem if possible. - 1.3.6.1.4.1.2021.1.102
+    indexes:
+    - labelname: processIndex
+      type: gauge
+  - name: prIndex
+    oid: 1.3.6.1.4.1.2021.2.1.1
+    type: gauge
+    help: Reference Index for each observed process. - 1.3.6.1.4.1.2021.2.1.1
+    indexes:
+    - labelname: prIndex
+      type: gauge
+  - name: prMin
+    oid: 1.3.6.1.4.1.2021.2.1.3
+    type: gauge
+    help: The minimum number of processes that should be running - 1.3.6.1.4.1.2021.2.1.3
+    indexes:
+    - labelname: prIndex
+      type: gauge
+  - name: prMax
+    oid: 1.3.6.1.4.1.2021.2.1.4
+    type: gauge
+    help: The maximum number of processes that should be running - 1.3.6.1.4.1.2021.2.1.4
+    indexes:
+    - labelname: prIndex
+      type: gauge
+  - name: prCount
+    oid: 1.3.6.1.4.1.2021.2.1.5
+    type: gauge
+    help: The number of current processes running with the name in question. - 1.3.6.1.4.1.2021.2.1.5
+    indexes:
+    - labelname: prIndex
+      type: gauge
+  - name: prErrorFlag
+    oid: 1.3.6.1.4.1.2021.2.1.100
+    type: gauge
+    help: A Error flag to indicate trouble with a process - 1.3.6.1.4.1.2021.2.1.100
+    indexes:
+    - labelname: prIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: error
+  - name: prErrFix
+    oid: 1.3.6.1.4.1.2021.2.1.102
+    type: gauge
+    help: Setting this to one will try to fix the problem if the agent has been configured
+      with a script to call to attempt to fix problems automatically using remote
+      snmp operations. - 1.3.6.1.4.1.2021.2.1.102
+    indexes:
+    - labelname: prIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: runFix
+  - name: extensibleIndex
+    oid: 1.3.6.1.4.1.2021.3.1
+    type: gauge
+    help: Reference Index for extensible calls. - 1.3.6.1.4.1.2021.3.1
+    indexes:
+    - labelname: extensibleIndex
+      type: gauge
+  - name: extensibleResult
+    oid: 1.3.6.1.4.1.2021.3.100
+    type: gauge
+    help: The result code from the executed command. - 1.3.6.1.4.1.2021.3.100
+    indexes:
+    - labelname: extensibleIndex
+      type: gauge
+  - name: extensibleErrFix
+    oid: 1.3.6.1.4.1.2021.3.102
+    type: gauge
+    help: Set to 1 to fix the problem, if possible. - 1.3.6.1.4.1.2021.3.102
+    indexes:
+    - labelname: extensibleIndex
+      type: gauge
+  - name: memIndex
+    oid: 1.3.6.1.4.1.2021.4.1
+    type: gauge
+    help: Bogus Index - 1.3.6.1.4.1.2021.4.1
+  - name: memTotalSwap
+    oid: 1.3.6.1.4.1.2021.4.3
+    type: gauge
+    help: The total amount of swap space configured for this host. - 1.3.6.1.4.1.2021.4.3
+  - name: memAvailSwap
+    oid: 1.3.6.1.4.1.2021.4.4
+    type: gauge
+    help: The amount of swap space currently unused or available. - 1.3.6.1.4.1.2021.4.4
+  - name: memTotalReal
+    oid: 1.3.6.1.4.1.2021.4.5
+    type: gauge
+    help: The total amount of real/physical memory installed on this host. - 1.3.6.1.4.1.2021.4.5
+  - name: memAvailReal
+    oid: 1.3.6.1.4.1.2021.4.6
+    type: gauge
+    help: The amount of real/physical memory currently unused or available. - 1.3.6.1.4.1.2021.4.6
+  - name: memTotalSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.7
+    type: gauge
+    help: The total amount of swap space or virtual memory allocated for text pages
+      on this host - 1.3.6.1.4.1.2021.4.7
+  - name: memAvailSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.8
+    type: gauge
+    help: The amount of swap space or virtual memory currently being used by text
+      pages on this host - 1.3.6.1.4.1.2021.4.8
+  - name: memTotalRealTXT
+    oid: 1.3.6.1.4.1.2021.4.9
+    type: gauge
+    help: The total amount of real/physical memory allocated for text pages on this
+      host - 1.3.6.1.4.1.2021.4.9
+  - name: memAvailRealTXT
+    oid: 1.3.6.1.4.1.2021.4.10
+    type: gauge
+    help: The amount of real/physical memory currently being used by text pages on
+      this host - 1.3.6.1.4.1.2021.4.10
+  - name: memTotalFree
+    oid: 1.3.6.1.4.1.2021.4.11
+    type: gauge
+    help: The total amount of memory free or available for use on this host - 1.3.6.1.4.1.2021.4.11
+  - name: memMinimumSwap
+    oid: 1.3.6.1.4.1.2021.4.12
+    type: gauge
+    help: The minimum amount of swap space expected to be kept free or available during
+      normal operation of this host - 1.3.6.1.4.1.2021.4.12
+  - name: memShared
+    oid: 1.3.6.1.4.1.2021.4.13
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      shared memory - 1.3.6.1.4.1.2021.4.13
+  - name: memBuffer
+    oid: 1.3.6.1.4.1.2021.4.14
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      memory buffers - 1.3.6.1.4.1.2021.4.14
+  - name: memCached
+    oid: 1.3.6.1.4.1.2021.4.15
+    type: gauge
+    help: The total amount of real or virtual memory currently allocated for use as
+      cached memory - 1.3.6.1.4.1.2021.4.15
+  - name: memUsedSwapTXT
+    oid: 1.3.6.1.4.1.2021.4.16
+    type: gauge
+    help: The amount of swap space or virtual memory currently being used by text
+      pages on this host - 1.3.6.1.4.1.2021.4.16
+  - name: memUsedRealTXT
+    oid: 1.3.6.1.4.1.2021.4.17
+    type: gauge
+    help: The amount of real/physical memory currently being used by text pages on
+      this host - 1.3.6.1.4.1.2021.4.17
+  - name: memSwapError
+    oid: 1.3.6.1.4.1.2021.4.100
+    type: gauge
+    help: Indicates whether the amount of available swap space (as reported by 'memAvailSwap(4)'),
+      is less than the desired minimum (specified by 'memMinimumSwap(12)'). - 1.3.6.1.4.1.2021.4.100
+    enum_values:
+      0: noError
+      1: error
+  - name: diskIndex
+    oid: 1.3.6.1.4.1.2021.6.1
+    type: gauge
+    help: Reference number for the Disk Mib. - 1.3.6.1.4.1.2021.6.1
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskMinimum
+    oid: 1.3.6.1.4.1.2021.6.4
+    type: gauge
+    help: Minimum space required on the disk. - 1.3.6.1.4.1.2021.6.4
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskMinPercent
+    oid: 1.3.6.1.4.1.2021.6.5
+    type: gauge
+    help: Minimum percentage of space required on the disk. - 1.3.6.1.4.1.2021.6.5
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskTotal
+    oid: 1.3.6.1.4.1.2021.6.6
+    type: gauge
+    help: Total Disk Size (kbytes) - 1.3.6.1.4.1.2021.6.6
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskAvail
+    oid: 1.3.6.1.4.1.2021.6.7
+    type: gauge
+    help: Available disk Space - 1.3.6.1.4.1.2021.6.7
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskUsed
+    oid: 1.3.6.1.4.1.2021.6.8
+    type: gauge
+    help: Used Space on Disk - 1.3.6.1.4.1.2021.6.8
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskPercent
+    oid: 1.3.6.1.4.1.2021.6.9
+    type: gauge
+    help: Percentage of space used on disk - 1.3.6.1.4.1.2021.6.9
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: diskErrorFlag
+    oid: 1.3.6.1.4.1.2021.6.100
+    type: gauge
+    help: Error flag signaling disk is over minimum required space - 1.3.6.1.4.1.2021.6.100
+    indexes:
+    - labelname: diskIndex
+      type: gauge
+  - name: loadaveIndex
+    oid: 1.3.6.1.4.1.2021.7.1
+    type: gauge
+    help: Reference Index for each observed loadave. - 1.3.6.1.4.1.2021.7.1
+    indexes:
+    - labelname: loadaveIndex
+      type: gauge
+  - name: loadaveErrorFlag
+    oid: 1.3.6.1.4.1.2021.7.100
+    type: gauge
+    help: A Error flag to indicate trouble with a loadave - 1.3.6.1.4.1.2021.7.100
+    indexes:
+    - labelname: loadaveIndex
+      type: gauge
+  - name: extIndex
+    oid: 1.3.6.1.4.1.2021.8.1.1
+    type: gauge
+    help: Reference Index for extensible scripts - 1.3.6.1.4.1.2021.8.1.1
+    indexes:
+    - labelname: extIndex
+      type: gauge
+  - name: extResult
+    oid: 1.3.6.1.4.1.2021.8.1.100
+    type: gauge
+    help: The result code (exit status) from the executed command. - 1.3.6.1.4.1.2021.8.1.100
+    indexes:
+    - labelname: extIndex
+      type: gauge
+  - name: extErrFix
+    oid: 1.3.6.1.4.1.2021.8.1.102
+    type: gauge
+    help: Setting this to one will try to fix the problem if the agent has been configured
+      with a script to call to attempt to fix problems automatically using remote
+      snmp operations. - 1.3.6.1.4.1.2021.8.1.102
+    indexes:
+    - labelname: extIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: runFix
+  - name: dskIndex
+    oid: 1.3.6.1.4.1.2021.9.1.1
+    type: gauge
+    help: Integer reference number (row number) for the disk mib. - 1.3.6.1.4.1.2021.9.1.1
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskMinimum
+    oid: 1.3.6.1.4.1.2021.9.1.4
+    type: gauge
+    help: Minimum space required on the disk (in kBytes) before the errors are triggered
+      - 1.3.6.1.4.1.2021.9.1.4
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskMinPercent
+    oid: 1.3.6.1.4.1.2021.9.1.5
+    type: gauge
+    help: Percentage of minimum space required on the disk before the errors are triggered
+      - 1.3.6.1.4.1.2021.9.1.5
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskTotal
+    oid: 1.3.6.1.4.1.2021.9.1.6
+    type: gauge
+    help: Total size of the disk/partion (kBytes) - 1.3.6.1.4.1.2021.9.1.6
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskAvail
+    oid: 1.3.6.1.4.1.2021.9.1.7
+    type: gauge
+    help: Available space on the disk - 1.3.6.1.4.1.2021.9.1.7
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskUsed
+    oid: 1.3.6.1.4.1.2021.9.1.8
+    type: gauge
+    help: Used space on the disk - 1.3.6.1.4.1.2021.9.1.8
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskPercent
+    oid: 1.3.6.1.4.1.2021.9.1.9
+    type: gauge
+    help: Percentage of space used on disk - 1.3.6.1.4.1.2021.9.1.9
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskPercentNode
+    oid: 1.3.6.1.4.1.2021.9.1.10
+    type: gauge
+    help: Percentage of inodes used on disk - 1.3.6.1.4.1.2021.9.1.10
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskTotalLow
+    oid: 1.3.6.1.4.1.2021.9.1.11
+    type: gauge
+    help: Total size of the disk/partion (kBytes) - 1.3.6.1.4.1.2021.9.1.11
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskTotalHigh
+    oid: 1.3.6.1.4.1.2021.9.1.12
+    type: gauge
+    help: Total size of the disk/partion (kBytes) - 1.3.6.1.4.1.2021.9.1.12
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskAvailLow
+    oid: 1.3.6.1.4.1.2021.9.1.13
+    type: gauge
+    help: Available space on the disk (kBytes) - 1.3.6.1.4.1.2021.9.1.13
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskAvailHigh
+    oid: 1.3.6.1.4.1.2021.9.1.14
+    type: gauge
+    help: Available space on the disk (kBytes) - 1.3.6.1.4.1.2021.9.1.14
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskUsedLow
+    oid: 1.3.6.1.4.1.2021.9.1.15
+    type: gauge
+    help: Used space on the disk (kBytes) - 1.3.6.1.4.1.2021.9.1.15
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskUsedHigh
+    oid: 1.3.6.1.4.1.2021.9.1.16
+    type: gauge
+    help: Used space on the disk (kBytes) - 1.3.6.1.4.1.2021.9.1.16
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+  - name: dskErrorFlag
+    oid: 1.3.6.1.4.1.2021.9.1.100
+    type: gauge
+    help: Error flag signaling that the disk or partition is under the minimum required
+      space configured for it. - 1.3.6.1.4.1.2021.9.1.100
+    indexes:
+    - labelname: dskIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: error
+  - name: laIndex
+    oid: 1.3.6.1.4.1.2021.10.1.1
+    type: gauge
+    help: reference index/row number for each observed loadave. - 1.3.6.1.4.1.2021.10.1.1
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laLoadInt
+    oid: 1.3.6.1.4.1.2021.10.1.5
+    type: gauge
+    help: The 1,5 and 15 minute load averages as an integer - 1.3.6.1.4.1.2021.10.1.5
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laLoadFloat
+    oid: 1.3.6.1.4.1.2021.10.1.6
+    type: Float
+    help: The 1,5 and 15 minute load averages as an opaquely wrapped floating point
+      number. - 1.3.6.1.4.1.2021.10.1.6
+    indexes:
+    - labelname: laIndex
+      type: gauge
+  - name: laErrorFlag
+    oid: 1.3.6.1.4.1.2021.10.1.100
+    type: gauge
+    help: A Error flag to indicate the load-average has crossed its threshold value
+      defined in the snmpd.conf file - 1.3.6.1.4.1.2021.10.1.100
+    indexes:
+    - labelname: laIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: error
+  - name: ssIndex
+    oid: 1.3.6.1.4.1.2021.11.1
+    type: gauge
+    help: Bogus Index - 1.3.6.1.4.1.2021.11.1
+  - name: ssSwapIn
+    oid: 1.3.6.1.4.1.2021.11.3
+    type: gauge
+    help: The average amount of memory swapped in from disk, calculated over the last
+      minute. - 1.3.6.1.4.1.2021.11.3
+  - name: ssSwapOut
+    oid: 1.3.6.1.4.1.2021.11.4
+    type: gauge
+    help: The average amount of memory swapped out to disk, calculated over the last
+      minute. - 1.3.6.1.4.1.2021.11.4
+  - name: ssIOSent
+    oid: 1.3.6.1.4.1.2021.11.5
+    type: gauge
+    help: The average amount of data written to disk or other block device, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.5
+  - name: ssIOReceive
+    oid: 1.3.6.1.4.1.2021.11.6
+    type: gauge
+    help: The average amount of data read from disk or other block device, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.6
+  - name: ssSysInterrupts
+    oid: 1.3.6.1.4.1.2021.11.7
+    type: gauge
+    help: The average rate of interrupts processed (including the clock) calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.7
+  - name: ssSysContext
+    oid: 1.3.6.1.4.1.2021.11.8
+    type: gauge
+    help: The average rate of context switches, calculated over the last minute -
+      1.3.6.1.4.1.2021.11.8
+  - name: ssCpuUser
+    oid: 1.3.6.1.4.1.2021.11.9
+    type: gauge
+    help: The percentage of CPU time spent processing user-level code, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.9
+  - name: ssCpuSystem
+    oid: 1.3.6.1.4.1.2021.11.10
+    type: gauge
+    help: The percentage of CPU time spent processing system-level code, calculated
+      over the last minute - 1.3.6.1.4.1.2021.11.10
+  - name: ssCpuIdle
+    oid: 1.3.6.1.4.1.2021.11.11
+    type: gauge
+    help: The percentage of processor time spent idle, calculated over the last minute
+      - 1.3.6.1.4.1.2021.11.11
+  - name: ssCpuRawUser
+    oid: 1.3.6.1.4.1.2021.11.50
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing user-level code
+      - 1.3.6.1.4.1.2021.11.50
+  - name: ssCpuRawNice
+    oid: 1.3.6.1.4.1.2021.11.51
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing reduced-priority
+      code - 1.3.6.1.4.1.2021.11.51
+  - name: ssCpuRawSystem
+    oid: 1.3.6.1.4.1.2021.11.52
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing system-level code
+      - 1.3.6.1.4.1.2021.11.52
+  - name: ssCpuRawIdle
+    oid: 1.3.6.1.4.1.2021.11.53
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent idle - 1.3.6.1.4.1.2021.11.53
+  - name: ssCpuRawWait
+    oid: 1.3.6.1.4.1.2021.11.54
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent waiting for IO - 1.3.6.1.4.1.2021.11.54
+  - name: ssCpuRawKernel
+    oid: 1.3.6.1.4.1.2021.11.55
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing kernel-level code
+      - 1.3.6.1.4.1.2021.11.55
+  - name: ssCpuRawInterrupt
+    oid: 1.3.6.1.4.1.2021.11.56
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing hardware interrupts
+      - 1.3.6.1.4.1.2021.11.56
+  - name: ssIORawSent
+    oid: 1.3.6.1.4.1.2021.11.57
+    type: counter
+    help: Number of blocks sent to a block device - 1.3.6.1.4.1.2021.11.57
+  - name: ssIORawReceived
+    oid: 1.3.6.1.4.1.2021.11.58
+    type: counter
+    help: Number of blocks received from a block device - 1.3.6.1.4.1.2021.11.58
+  - name: ssRawInterrupts
+    oid: 1.3.6.1.4.1.2021.11.59
+    type: counter
+    help: Number of interrupts processed - 1.3.6.1.4.1.2021.11.59
+  - name: ssRawContexts
+    oid: 1.3.6.1.4.1.2021.11.60
+    type: counter
+    help: Number of context switches - 1.3.6.1.4.1.2021.11.60
+  - name: ssCpuRawSoftIRQ
+    oid: 1.3.6.1.4.1.2021.11.61
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent processing software interrupts
+      - 1.3.6.1.4.1.2021.11.61
+  - name: ssRawSwapIn
+    oid: 1.3.6.1.4.1.2021.11.62
+    type: counter
+    help: Number of blocks swapped in - 1.3.6.1.4.1.2021.11.62
+  - name: ssRawSwapOut
+    oid: 1.3.6.1.4.1.2021.11.63
+    type: counter
+    help: Number of blocks swapped out - 1.3.6.1.4.1.2021.11.63
+  - name: ssCpuRawSteal
+    oid: 1.3.6.1.4.1.2021.11.64
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the hypervisor code to
+      run other VMs even though the CPU in the current VM had something runnable -
+      1.3.6.1.4.1.2021.11.64
+  - name: ssCpuRawGuest
+    oid: 1.3.6.1.4.1.2021.11.65
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the CPU to run a virtual
+      CPU (guest) - 1.3.6.1.4.1.2021.11.65
+  - name: ssCpuRawGuestNice
+    oid: 1.3.6.1.4.1.2021.11.66
+    type: counter
+    help: The number of 'ticks' (typically 1/100s) spent by the CPU to run a niced
+      virtual CPU (guest) - 1.3.6.1.4.1.2021.11.66
+  - name: ssCpuNumCpus
+    oid: 1.3.6.1.4.1.2021.11.67
+    type: gauge
+    help: The number of processors, as counted by the agent - 1.3.6.1.4.1.2021.11.67
+  - name: ipFwAccIndex
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.1
+    type: gauge
+    help: Reference index for each firewall rule. - 1.3.6.1.4.1.2021.13.1.1.1.1
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccSrcAddr
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.2
+    type: InetAddressIPv4
+    help: The source address in the firewall rule. - 1.3.6.1.4.1.2021.13.1.1.1.2
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccSrcNetMask
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.3
+    type: InetAddressIPv4
+    help: The netmask of the source address in the firewall rule. - 1.3.6.1.4.1.2021.13.1.1.1.3
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccDstAddr
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.4
+    type: InetAddressIPv4
+    help: The destination address in the firewall rule. - 1.3.6.1.4.1.2021.13.1.1.1.4
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccDstNetMask
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.5
+    type: InetAddressIPv4
+    help: The netmask of the destination address in the firewall rule. - 1.3.6.1.4.1.2021.13.1.1.1.5
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccViaAddr
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.7
+    type: InetAddressIPv4
+    help: The address of the interface to which the rule applies - 1.3.6.1.4.1.2021.13.1.1.1.7
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccProto
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.8
+    type: gauge
+    help: The protocol(s) to which the rule applies. - 1.3.6.1.4.1.2021.13.1.1.1.8
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: all
+      3: tcp
+      4: udp
+      5: icmp
+  - name: ipFwAccBidir
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.9
+    type: gauge
+    help: Whether the rule works in both directions (i.e - 1.3.6.1.4.1.2021.13.1.1.1.9
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+    enum_values:
+      1: unidirectional
+      2: bidirectional
+  - name: ipFwAccDir
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.10
+    type: gauge
+    help: Whether the rule applies to packets entering or exiting the kernel. - 1.3.6.1.4.1.2021.13.1.1.1.10
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+    enum_values:
+      1: both
+      2: in
+      3: out
+  - name: ipFwAccBytes
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.11
+    type: counter
+    help: The number of bytes that matched this rule since the last reset of the counters.
+      - 1.3.6.1.4.1.2021.13.1.1.1.11
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPackets
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.12
+    type: counter
+    help: The number of packets that matched this rule since the last reset of the
+      counters. - 1.3.6.1.4.1.2021.13.1.1.1.12
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccNrSrcPorts
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.13
+    type: gauge
+    help: The number of ports that refer to the source address. - 1.3.6.1.4.1.2021.13.1.1.1.13
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccNrDstPorts
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.14
+    type: gauge
+    help: The number of ports that refer to the destination address. - 1.3.6.1.4.1.2021.13.1.1.1.14
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccSrcIsRange
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.15
+    type: gauge
+    help: Interpret the first two ports of the source part as the upper and lower
+      limit of an interval or not. - 1.3.6.1.4.1.2021.13.1.1.1.15
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+    enum_values:
+      1: srchasrange
+      2: srchasnorange
+  - name: ipFwAccDstIsRange
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.16
+    type: gauge
+    help: Interpret the first two ports of the destination part as the upper and lower
+      limit of an interval or not. - 1.3.6.1.4.1.2021.13.1.1.1.16
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+    enum_values:
+      1: dsthasrange
+      2: dsthasnorange
+  - name: ipFwAccPort1
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.17
+    type: gauge
+    help: Port number 1. - 1.3.6.1.4.1.2021.13.1.1.1.17
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort2
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.18
+    type: gauge
+    help: Port number 2. - 1.3.6.1.4.1.2021.13.1.1.1.18
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort3
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.19
+    type: gauge
+    help: Port number 3. - 1.3.6.1.4.1.2021.13.1.1.1.19
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort4
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.20
+    type: gauge
+    help: Port number 4. - 1.3.6.1.4.1.2021.13.1.1.1.20
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort5
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.21
+    type: gauge
+    help: Port number 5. - 1.3.6.1.4.1.2021.13.1.1.1.21
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort6
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.22
+    type: gauge
+    help: Port number 6. - 1.3.6.1.4.1.2021.13.1.1.1.22
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort7
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.23
+    type: gauge
+    help: Port number 7. - 1.3.6.1.4.1.2021.13.1.1.1.23
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort8
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.24
+    type: gauge
+    help: Port number 8. - 1.3.6.1.4.1.2021.13.1.1.1.24
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort9
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.25
+    type: gauge
+    help: Port number 9. - 1.3.6.1.4.1.2021.13.1.1.1.25
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipFwAccPort10
+    oid: 1.3.6.1.4.1.2021.13.1.1.1.26
+    type: gauge
+    help: Port number 10. - 1.3.6.1.4.1.2021.13.1.1.1.26
+    indexes:
+    - labelname: ipFwAccIndex
+      type: gauge
+  - name: ipfInIndex
+    oid: 1.3.6.1.4.1.2021.13.2.1.1.1
+    type: gauge
+    help: Reference index for each incoming IP Filter rule. - 1.3.6.1.4.1.2021.13.2.1.1.1
+    indexes:
+    - labelname: ipfInIndex
+      type: gauge
+  - name: ipfInRule
+    oid: 1.3.6.1.4.1.2021.13.2.1.1.2
+    type: OctetString
+    help: Textual representation of the incoming IP Filter rule. - 1.3.6.1.4.1.2021.13.2.1.1.2
+    indexes:
+    - labelname: ipfInIndex
+      type: gauge
+  - name: ipfInHits
+    oid: 1.3.6.1.4.1.2021.13.2.1.1.3
+    type: counter
+    help: Hits of the incoming IP Filter rule. - 1.3.6.1.4.1.2021.13.2.1.1.3
+    indexes:
+    - labelname: ipfInIndex
+      type: gauge
+  - name: ipfOutIndex
+    oid: 1.3.6.1.4.1.2021.13.2.2.1.1
+    type: gauge
+    help: Reference index for each outgoing IP Filter rule. - 1.3.6.1.4.1.2021.13.2.2.1.1
+    indexes:
+    - labelname: ipfOutIndex
+      type: gauge
+  - name: ipfOutRule
+    oid: 1.3.6.1.4.1.2021.13.2.2.1.2
+    type: OctetString
+    help: Textual representation of the outgoing IP Filter rule. - 1.3.6.1.4.1.2021.13.2.2.1.2
+    indexes:
+    - labelname: ipfOutIndex
+      type: gauge
+  - name: ipfOutHits
+    oid: 1.3.6.1.4.1.2021.13.2.2.1.3
+    type: counter
+    help: Hits of the outgoing IP Filter rule. - 1.3.6.1.4.1.2021.13.2.2.1.3
+    indexes:
+    - labelname: ipfOutIndex
+      type: gauge
+  - name: ipfAccInIndex
+    oid: 1.3.6.1.4.1.2021.13.2.3.1.1
+    type: gauge
+    help: Reference index for each incoming accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.3.1.1
+    indexes:
+    - labelname: ipfAccInIndex
+      type: gauge
+  - name: ipfAccInRule
+    oid: 1.3.6.1.4.1.2021.13.2.3.1.2
+    type: OctetString
+    help: Textual representation of the incoming accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.3.1.2
+    indexes:
+    - labelname: ipfAccInIndex
+      type: gauge
+  - name: ipfAccInHits
+    oid: 1.3.6.1.4.1.2021.13.2.3.1.3
+    type: counter
+    help: Hits of the incoming accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.3.1.3
+    indexes:
+    - labelname: ipfAccInIndex
+      type: gauge
+  - name: ipfAccInBytes
+    oid: 1.3.6.1.4.1.2021.13.2.3.1.4
+    type: counter
+    help: Bytes passed thru the incoming accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.3.1.4
+    indexes:
+    - labelname: ipfAccInIndex
+      type: gauge
+  - name: ipfAccOutIndex
+    oid: 1.3.6.1.4.1.2021.13.2.4.1.1
+    type: gauge
+    help: Reference index for each outgoing accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.4.1.1
+    indexes:
+    - labelname: ipfAccOutIndex
+      type: gauge
+  - name: ipfAccOutRule
+    oid: 1.3.6.1.4.1.2021.13.2.4.1.2
+    type: OctetString
+    help: Textual representation of the outgoing accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.4.1.2
+    indexes:
+    - labelname: ipfAccOutIndex
+      type: gauge
+  - name: ipfAccOutHits
+    oid: 1.3.6.1.4.1.2021.13.2.4.1.3
+    type: counter
+    help: Hits of the outgoing accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.4.1.3
+    indexes:
+    - labelname: ipfAccOutIndex
+      type: gauge
+  - name: ipfAccOutBytes
+    oid: 1.3.6.1.4.1.2021.13.2.4.1.4
+    type: counter
+    help: Bytes passed thru the outgoing accounting IP Filter rule. - 1.3.6.1.4.1.2021.13.2.4.1.4
+    indexes:
+    - labelname: ipfAccOutIndex
+      type: gauge
+  - name: dlmodNextIndex
+    oid: 1.3.6.1.4.1.2021.13.14.1
+    type: gauge
+    help: The index number of next appropiate unassigned entry in the dlmodTable.
+      - 1.3.6.1.4.1.2021.13.14.1
+  - name: dlmodIndex
+    oid: 1.3.6.1.4.1.2021.13.14.2.1.1
+    type: gauge
+    help: An index that uniqely identifies an entry in the dlmodTable. - 1.3.6.1.4.1.2021.13.14.2.1.1
+    indexes:
+    - labelname: dlmodIndex
+      type: gauge
+  - name: dlmodStatus
+    oid: 1.3.6.1.4.1.2021.13.14.2.1.5
+    type: gauge
+    help: The current status of the loaded module. - 1.3.6.1.4.1.2021.13.14.2.1.5
+    indexes:
+    - labelname: dlmodIndex
+      type: gauge
+    enum_values:
+      1: loaded
+      2: unloaded
+      3: error
+      4: load
+      5: unload
+      6: create
+      7: delete
+  - name: diskIOIndex
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.15.1.1.1
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONRead
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.3
+    type: counter
+    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.3
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONWritten
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.4
+    type: counter
+    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.4
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOReads
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.5
+    type: counter
+    help: The number of read accesses from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.5
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOWrites
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.6
+    type: counter
+    help: The number of write accesses to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.6
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA1
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.9
+    type: gauge
+    help: The 1 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.9
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA5
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.10
+    type: gauge
+    help: The 5 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.10
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOLA15
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.11
+    type: gauge
+    help: The 15 minute average load of disk (%) - 1.3.6.1.4.1.2021.13.15.1.1.11
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONReadX
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.12
+    type: counter
+    help: The number of bytes read from this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.12
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIONWrittenX
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.13
+    type: counter
+    help: The number of bytes written to this device since boot. - 1.3.6.1.4.1.2021.13.15.1.1.13
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: diskIOBusyTime
+    oid: 1.3.6.1.4.1.2021.13.15.1.1.14
+    type: counter
+    help: The number of usecs the drive has been busy since boot. - 1.3.6.1.4.1.2021.13.15.1.1.14
+    indexes:
+    - labelname: diskIOIndex
+      type: gauge
+  - name: lmTempSensorsIndex
+    oid: 1.3.6.1.4.1.2021.13.16.2.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.16.2.1.1
+    indexes:
+    - labelname: lmTempSensorsIndex
+      type: gauge
+  - name: lmTempSensorsValue
+    oid: 1.3.6.1.4.1.2021.13.16.2.1.3
+    type: gauge
+    help: The temperature of this sensor in mC. - 1.3.6.1.4.1.2021.13.16.2.1.3
+    indexes:
+    - labelname: lmTempSensorsIndex
+      type: gauge
+  - name: lmFanSensorsIndex
+    oid: 1.3.6.1.4.1.2021.13.16.3.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.16.3.1.1
+    indexes:
+    - labelname: lmFanSensorsIndex
+      type: gauge
+  - name: lmFanSensorsValue
+    oid: 1.3.6.1.4.1.2021.13.16.3.1.3
+    type: gauge
+    help: The rotation speed of the fan in RPM. - 1.3.6.1.4.1.2021.13.16.3.1.3
+    indexes:
+    - labelname: lmFanSensorsIndex
+      type: gauge
+  - name: lmVoltSensorsIndex
+    oid: 1.3.6.1.4.1.2021.13.16.4.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.16.4.1.1
+    indexes:
+    - labelname: lmVoltSensorsIndex
+      type: gauge
+  - name: lmVoltSensorsValue
+    oid: 1.3.6.1.4.1.2021.13.16.4.1.3
+    type: gauge
+    help: The voltage in mV. - 1.3.6.1.4.1.2021.13.16.4.1.3
+    indexes:
+    - labelname: lmVoltSensorsIndex
+      type: gauge
+  - name: lmMiscSensorsIndex
+    oid: 1.3.6.1.4.1.2021.13.16.5.1.1
+    type: gauge
+    help: Reference index for each observed device. - 1.3.6.1.4.1.2021.13.16.5.1.1
+    indexes:
+    - labelname: lmMiscSensorsIndex
+      type: gauge
+  - name: lmMiscSensorsValue
+    oid: 1.3.6.1.4.1.2021.13.16.5.1.3
+    type: gauge
+    help: The value of this sensor. - 1.3.6.1.4.1.2021.13.16.5.1.3
+    indexes:
+    - labelname: lmMiscSensorsIndex
+      type: gauge
+  - name: ucdDemoResetKeys
+    oid: 1.3.6.1.4.1.2021.14.1.1.1
+    type: gauge
+    help: A set of value 1 to this object resets the demonstration user's auth and
+      priv keys to the keys based on the P->Ku->Kul transformation of the value of
+      the ucdDemoPasspharse object - 1.3.6.1.4.1.2021.14.1.1.1
+  - name: ucdDemoPublicString
+    oid: 1.3.6.1.4.1.2021.14.1.1.2
+    type: OctetString
+    help: A publicly settable string that can be set for testing snmpsets - 1.3.6.1.4.1.2021.14.1.1.2
+  - name: ucdDemoUserList
+    oid: 1.3.6.1.4.1.2021.14.1.1.3
+    type: OctetString
+    help: The list of users affected by the ucdDemoResetKeys object. - 1.3.6.1.4.1.2021.14.1.1.3
+  - name: ucdDemoPassphrase
+    oid: 1.3.6.1.4.1.2021.14.1.1.4
+    type: OctetString
+    help: The demo passphrase that ucdDemoResetKeys changes each users localized key
+      to based on the P->Ku->Kul transformation. - 1.3.6.1.4.1.2021.14.1.1.4
+  - name: fileIndex
+    oid: 1.3.6.1.4.1.2021.15.1.1
+    type: gauge
+    help: Index of file - 1.3.6.1.4.1.2021.15.1.1
+    indexes:
+    - labelname: fileIndex
+      type: gauge
+  - name: fileSize
+    oid: 1.3.6.1.4.1.2021.15.1.3
+    type: gauge
+    help: Size of file (kB) - 1.3.6.1.4.1.2021.15.1.3
+    indexes:
+    - labelname: fileIndex
+      type: gauge
+  - name: fileMax
+    oid: 1.3.6.1.4.1.2021.15.1.4
+    type: gauge
+    help: Limit of filesize (kB) - 1.3.6.1.4.1.2021.15.1.4
+    indexes:
+    - labelname: fileIndex
+      type: gauge
+  - name: fileErrorFlag
+    oid: 1.3.6.1.4.1.2021.15.1.100
+    type: gauge
+    help: Limit exceeded flag - 1.3.6.1.4.1.2021.15.1.100
+    indexes:
+    - labelname: fileIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: error
+  - name: logMatchMaxEntries
+    oid: 1.3.6.1.4.1.2021.16.1
+    type: gauge
+    help: The maximum number of logmatch entries this snmpd daemon can support. -
+      1.3.6.1.4.1.2021.16.1
+  - name: logMatchIndex
+    oid: 1.3.6.1.4.1.2021.16.2.1.1
+    type: gauge
+    help: Index of logmatch - 1.3.6.1.4.1.2021.16.2.1.1
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchGlobalCounter
+    oid: 1.3.6.1.4.1.2021.16.2.1.5
+    type: counter
+    help: global count of matches - 1.3.6.1.4.1.2021.16.2.1.5
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchGlobalCount
+    oid: 1.3.6.1.4.1.2021.16.2.1.6
+    type: gauge
+    help: Description. - 1.3.6.1.4.1.2021.16.2.1.6
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchCurrentCounter
+    oid: 1.3.6.1.4.1.2021.16.2.1.7
+    type: counter
+    help: Regex match counter - 1.3.6.1.4.1.2021.16.2.1.7
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchCurrentCount
+    oid: 1.3.6.1.4.1.2021.16.2.1.8
+    type: gauge
+    help: Description. - 1.3.6.1.4.1.2021.16.2.1.8
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchCounter
+    oid: 1.3.6.1.4.1.2021.16.2.1.9
+    type: counter
+    help: Regex match counter - 1.3.6.1.4.1.2021.16.2.1.9
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchCount
+    oid: 1.3.6.1.4.1.2021.16.2.1.10
+    type: gauge
+    help: Description. - 1.3.6.1.4.1.2021.16.2.1.10
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchCycle
+    oid: 1.3.6.1.4.1.2021.16.2.1.11
+    type: gauge
+    help: time between updates (if not queried) in seconds - 1.3.6.1.4.1.2021.16.2.1.11
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+  - name: logMatchErrorFlag
+    oid: 1.3.6.1.4.1.2021.16.2.1.100
+    type: gauge
+    help: 'errorflag: is this line configured correctly? - 1.3.6.1.4.1.2021.16.2.1.100'
+    indexes:
+    - labelname: logMatchIndex
+      type: gauge
+    enum_values:
+      0: noError
+      1: error
+  - name: versionIndex
+    oid: 1.3.6.1.4.1.2021.100.1
+    type: gauge
+    help: Index to mib (always 0) - 1.3.6.1.4.1.2021.100.1
+  - name: versionClearCache
+    oid: 1.3.6.1.4.1.2021.100.10
+    type: gauge
+    help: Set to 1 to clear the exec cache, if enabled - 1.3.6.1.4.1.2021.100.10
+  - name: versionUpdateConfig
+    oid: 1.3.6.1.4.1.2021.100.11
+    type: gauge
+    help: Set to 1 to read-read the config file(s). - 1.3.6.1.4.1.2021.100.11
+  - name: versionRestartAgent
+    oid: 1.3.6.1.4.1.2021.100.12
+    type: gauge
+    help: Set to 1 to restart the agent. - 1.3.6.1.4.1.2021.100.12
+  - name: versionSavePersistentData
+    oid: 1.3.6.1.4.1.2021.100.13
+    type: gauge
+    help: Set to 1 to force the agent to save it's persistent data immediately. -
+      1.3.6.1.4.1.2021.100.13
+  - name: versionDoDebugging
+    oid: 1.3.6.1.4.1.2021.100.20
+    type: gauge
+    help: Set to 1 to turn debugging statements on in the agent or 0 to turn it off.
+      - 1.3.6.1.4.1.2021.100.20
+  - name: snmperrIndex
+    oid: 1.3.6.1.4.1.2021.101.1
+    type: gauge
+    help: Bogus Index for snmperrs (always 0). - 1.3.6.1.4.1.2021.101.1
+  - name: snmperrErrorFlag
+    oid: 1.3.6.1.4.1.2021.101.100
+    type: gauge
+    help: A Error flag to indicate trouble with the agent - 1.3.6.1.4.1.2021.101.100
+    enum_values:
+      0: noError
+      1: error
+  - name: mrIndex
+    oid: 1.3.6.1.4.1.2021.102.1.1
+    type: OctetString
+    help: The registry slot of a mibmodule. - 1.3.6.1.4.1.2021.102.1.1
+    indexes:
+    - labelname: mrIndex
+      type: OctetString
+      implied: true
+  - name: nsExtendNumEntries
+    oid: 1.3.6.1.4.1.8072.1.3.2.1
+    type: gauge
+    help: The number of rows in the nsExtendConfigTable - 1.3.6.1.4.1.8072.1.3.2.1
+  - name: nsCacheDefaultTimeout
+    oid: 1.3.6.1.4.1.8072.1.5.1
+    type: gauge
+    help: Default cache timeout value (unless overridden for a particular cache entry).
+      - 1.3.6.1.4.1.8072.1.5.1
+  - name: nsCachedOID
+    oid: 1.3.6.1.4.1.8072.1.5.3.1.1
+    type: OctetString
+    help: The root OID of the data being cached. - 1.3.6.1.4.1.8072.1.5.3.1.1
+    indexes:
+    - labelname: nsCachedOID
+      type: OctetString
+      implied: true
+  - name: nsCacheTimeout
+    oid: 1.3.6.1.4.1.8072.1.5.3.1.2
+    type: gauge
+    help: The length of time (?in seconds) for which the data in this particular cache
+      entry will remain valid. - 1.3.6.1.4.1.8072.1.5.3.1.2
+    indexes:
+    - labelname: nsCachedOID
+      type: OctetString
+      implied: true
+  - name: nsCacheStatus
+    oid: 1.3.6.1.4.1.8072.1.5.3.1.3
+    type: gauge
+    help: The current status of this particular cache entry - 1.3.6.1.4.1.8072.1.5.3.1.3
+    indexes:
+    - labelname: nsCachedOID
+      type: OctetString
+      implied: true
+    enum_values:
+      1: enabled
+      2: disabled
+      3: empty
+      4: cached
+      5: expired
+  - name: nsTransactionID
+    oid: 1.3.6.1.4.1.8072.1.8.1.1.1
+    type: gauge
+    help: The internal identifier for a given transaction. - 1.3.6.1.4.1.8072.1.8.1.1.1
+    indexes:
+    - labelname: nsTransactionID
+      type: gauge
+  - name: nsTransactionMode
+    oid: 1.3.6.1.4.1.8072.1.8.1.1.2
+    type: gauge
+    help: The mode number for the current operation being performed. - 1.3.6.1.4.1.8072.1.8.1.1.2
+    indexes:
+    - labelname: nsTransactionID
+      type: gauge
+  - name: netSnmpExampleInteger
+    oid: 1.3.6.1.4.1.8072.2.1.1
+    type: gauge
+    help: This is a simple object which merely houses a writable integer - 1.3.6.1.4.1.8072.2.1.1
+  - name: netSnmpExampleSleeper
+    oid: 1.3.6.1.4.1.8072.2.1.2
+    type: gauge
+    help: This is a simple object which is a basic integer - 1.3.6.1.4.1.8072.2.1.2
+  - name: nsIETFWGName
+    oid: 1.3.6.1.4.1.8072.2.2.1.1.1
+    type: OctetString
+    help: The name of the IETF Working Group this table describes. - 1.3.6.1.4.1.8072.2.2.1.1.1
+    indexes:
+    - labelname: nsIETFWGName
+      type: OctetString
+  - name: nsIETFWGChair1
+    oid: 1.3.6.1.4.1.8072.2.2.1.1.2
+    type: OctetString
+    help: One of the names of the chairs for the IETF working group. - 1.3.6.1.4.1.8072.2.2.1.1.2
+    indexes:
+    - labelname: nsIETFWGName
+      type: OctetString
+  - name: nsIETFWGChair2
+    oid: 1.3.6.1.4.1.8072.2.2.1.1.3
+    type: OctetString
+    help: The other name, if one exists, of the chairs for the IETF working group.
+      - 1.3.6.1.4.1.8072.2.2.1.1.3
+    indexes:
+    - labelname: nsIETFWGName
+      type: OctetString
+  - name: netSnmpHostName
+    oid: 1.3.6.1.4.1.8072.2.2.2.1.1
+    type: OctetString
+    help: A host name that exists in the /etc/hosts (unix) file. - 1.3.6.1.4.1.8072.2.2.2.1.1
+    indexes:
+    - labelname: netSnmpHostName
+      type: OctetString
+  - name: netSnmpPassIndex
+    oid: 1.3.6.1.4.1.8072.2.255.2.1.1
+    type: gauge
+    help: Arbitrary index into the netSnmpPassTable - 1.3.6.1.4.1.8072.2.255.2.1.1
+    indexes:
+    - labelname: netSnmpPassIndex
+      type: gauge
+  - name: netSnmpPassInteger
+    oid: 1.3.6.1.4.1.8072.2.255.2.1.2
+    type: gauge
+    help: Example Integer (table) object. - 1.3.6.1.4.1.8072.2.255.2.1.2
+    indexes:
+    - labelname: netSnmpPassIndex
+      type: gauge
+  - name: netSnmpPassOID
+    oid: 1.3.6.1.4.1.8072.2.255.2.1.3
+    type: OctetString
+    help: Example OID (table) object. - 1.3.6.1.4.1.8072.2.255.2.1.3
+    indexes:
+    - labelname: netSnmpPassIndex
+      type: gauge
+  - name: netSnmpPassTimeTicks
+    oid: 1.3.6.1.4.1.8072.2.255.3
+    type: gauge
+    help: Example timetick object. - 1.3.6.1.4.1.8072.2.255.3
+  - name: netSnmpPassIpAddress
+    oid: 1.3.6.1.4.1.8072.2.255.4
+    type: InetAddressIPv4
+    help: Example IP Address object. - 1.3.6.1.4.1.8072.2.255.4
+  - name: netSnmpPassCounter
+    oid: 1.3.6.1.4.1.8072.2.255.5
+    type: counter
+    help: Example counter object - 1.3.6.1.4.1.8072.2.255.5
+  - name: netSnmpPassGauge
+    oid: 1.3.6.1.4.1.8072.2.255.6
+    type: gauge
+    help: Example Gauge object. - 1.3.6.1.4.1.8072.2.255.6
+  - name: netSnmpPassCounter64
+    oid: 1.3.6.1.4.1.8072.2.255.7
+    type: counter
+    help: Example Counter64 object. - 1.3.6.1.4.1.8072.2.255.7
+  - name: sumInternalSessions
+    oid: 1.3.6.1.4.1.36733.1.2.1.1.1
+    type: counter
+    help: Total number of current internal sessions - 1.3.6.1.4.1.36733.1.2.1.1.1
+  - name: averageInternalRefreshTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.1.2
+    type: counter
+    help: Average time it takes to refresh an internal session - 1.3.6.1.4.1.36733.1.2.1.1.2
+  - name: averageInternalLogoutTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.1.3
+    type: counter
+    help: Average time it takes to logout an internal session - 1.3.6.1.4.1.36733.1.2.1.1.3
+  - name: averageInternalDestroyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.1.4
+    type: counter
+    help: Average time it takes to destroy an internal session - 1.3.6.1.4.1.36733.1.2.1.1.4
+  - name: averageInternalSetPropertyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.1.5
+    type: counter
+    help: Average time it takes to set a property on an internal session - 1.3.6.1.4.1.36733.1.2.1.1.5
+  - name: sumRemoteSessions
+    oid: 1.3.6.1.4.1.36733.1.2.1.2.1
+    type: counter
+    help: Total number of current remote sessions - 1.3.6.1.4.1.36733.1.2.1.2.1
+  - name: averageRemoteRefreshTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.2.2
+    type: counter
+    help: Average time it takes to refresh a remote session - 1.3.6.1.4.1.36733.1.2.1.2.2
+  - name: averageRemoteLogoutTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.2.3
+    type: counter
+    help: Average time it takes to logout a remote session - 1.3.6.1.4.1.36733.1.2.1.2.3
+  - name: averageRemoteDestroyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.2.4
+    type: counter
+    help: Average time it takes to destroy a remote session - 1.3.6.1.4.1.36733.1.2.1.2.4
+  - name: averageRemoteSetPropertyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.2.5
+    type: counter
+    help: Average time it takes to set a property on a remote session - 1.3.6.1.4.1.36733.1.2.1.2.5
+  - name: sumCTSSessions
+    oid: 1.3.6.1.4.1.36733.1.2.1.3.1
+    type: counter
+    help: Total number of sessions currently in the CTS - 1.3.6.1.4.1.36733.1.2.1.3.1
+  - name: averageCTSRefreshTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.3.2
+    type: counter
+    help: Average time it takes to refresh a CTS session - 1.3.6.1.4.1.36733.1.2.1.3.2
+  - name: averageCTSLogoutTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.3.3
+    type: counter
+    help: Average time it takes to logout a CTS session - 1.3.6.1.4.1.36733.1.2.1.3.3
+  - name: averageCTSDestroyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.3.4
+    type: counter
+    help: Average time it takes to destroy a CTS session - 1.3.6.1.4.1.36733.1.2.1.3.4
+  - name: averageCTSSetPropertyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.3.5
+    type: counter
+    help: Average time it takes to set a property on a CTS session - 1.3.6.1.4.1.36733.1.2.1.3.5
+  - name: sumStatelessSessions
+    oid: 1.3.6.1.4.1.36733.1.2.1.4.1
+    type: counter
+    help: Total number of stateless sessions (unused) - 1.3.6.1.4.1.36733.1.2.1.4.1
+  - name: averageStatelessRefreshTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.4.2
+    type: counter
+    help: Average time it takes to refresh a stateless session - 1.3.6.1.4.1.36733.1.2.1.4.2
+  - name: averageStatelessLogoutTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.4.3
+    type: counter
+    help: Average time it takes to logout a stateless session - 1.3.6.1.4.1.36733.1.2.1.4.3
+  - name: averageStatelessDestroyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.4.4
+    type: counter
+    help: Average time it takes to destroy a stateless session - 1.3.6.1.4.1.36733.1.2.1.4.4
+  - name: averageStatelessSetPropertyTime
+    oid: 1.3.6.1.4.1.36733.1.2.1.4.5
+    type: counter
+    help: Average time it takes to set a property on a stateless session - 1.3.6.1.4.1.36733.1.2.1.4.5
+  - name: selfEvaluationsCumulative
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.1.1
+    type: counter
+    help: Cumulative number of self evaluations - 1.3.6.1.4.1.36733.1.2.2.1.1.1
+  - name: selfEvaluationsAverage
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.1.2
+    type: counter
+    help: Average rate of self evaluations - 1.3.6.1.4.1.36733.1.2.2.1.1.2
+  - name: selfEvaluationsMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.1.3
+    type: counter
+    help: Minimum rate of self evaluations - 1.3.6.1.4.1.36733.1.2.2.1.1.3
+  - name: selfEvaluationsMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.1.4
+    type: counter
+    help: Maximum rate of self evaluations - 1.3.6.1.4.1.36733.1.2.2.1.1.4
+  - name: subtreeEvaluationsCumulative
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.2.1
+    type: counter
+    help: Cumulative number of subtree evaluations - 1.3.6.1.4.1.36733.1.2.2.1.2.1
+  - name: subtreeEvaluationsAverage
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.2.2
+    type: counter
+    help: Average rate of subtree evaluations - 1.3.6.1.4.1.36733.1.2.2.1.2.2
+  - name: subtreeEvaluationsMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.2.3
+    type: counter
+    help: Minimum rate of subtree evaluations - 1.3.6.1.4.1.36733.1.2.2.1.2.3
+  - name: subtreeEvaluationsMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.2.1.2.4
+    type: counter
+    help: Maximum rate of subtree evaluations - 1.3.6.1.4.1.36733.1.2.2.1.2.4
+  - name: selfTimingAverage
+    oid: 1.3.6.1.4.1.36733.1.2.2.2.1.1
+    type: counter
+    help: Average length of time a self policy takes to evaluate - 1.3.6.1.4.1.36733.1.2.2.2.1.1
+  - name: subtreeTimingAverage
+    oid: 1.3.6.1.4.1.36733.1.2.2.2.2.1
+    type: counter
+    help: Average length of time a subtree policy takes to evaluate - 1.3.6.1.4.1.36733.1.2.2.2.2.1
+  - name: tokenTableIndex
+    oid: 1.3.6.1.4.1.36733.1.2.3.1.1.1
+    type: counter
+    help: Token Table Index - 1.3.6.1.4.1.36733.1.2.3.1.1.1
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+  - name: tokenType
+    oid: 1.3.6.1.4.1.36733.1.2.3.1.1.2
+    type: DisplayString
+    help: Token Type - 1.3.6.1.4.1.36733.1.2.3.1.1.2
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+  - name: operationTableIndex
+    oid: 1.3.6.1.4.1.36733.1.2.3.2.1.1
+    type: counter
+    help: Operation Table Index - 1.3.6.1.4.1.36733.1.2.3.2.1.1
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: operationType
+    oid: 1.3.6.1.4.1.36733.1.2.3.2.1.2
+    type: DisplayString
+    help: Operation Operation Type - 1.3.6.1.4.1.36733.1.2.3.2.1.2
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sCumulativeCount
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.1
+    type: counter
+    help: Cumulative value - 1.3.6.1.4.1.36733.1.2.3.3.1.1
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sAverage
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.2
+    type: gauge
+    help: Average value - 1.3.6.1.4.1.36733.1.2.3.3.1.2
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.3
+    type: counter
+    help: Minimum value - 1.3.6.1.4.1.36733.1.2.3.3.1.3
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.4
+    type: counter
+    help: Maximum value - 1.3.6.1.4.1.36733.1.2.3.3.1.4
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sFailureCount
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.5
+    type: counter
+    help: Cumulative count of failures of this operation since server startup. - 1.3.6.1.4.1.36733.1.2.3.3.1.5
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sFailureAverage
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.6
+    type: gauge
+    help: Average rate of failures of this operation in the current period. - 1.3.6.1.4.1.36733.1.2.3.3.1.6
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sFailureMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.7
+    type: counter
+    help: Minimum rate of failure of this operation in the current period. - 1.3.6.1.4.1.36733.1.2.3.3.1.7
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: sFailureMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.3.3.1.8
+    type: counter
+    help: Maximum rate of failure of this operation in the current period. - 1.3.6.1.4.1.36733.1.2.3.3.1.8
+    indexes:
+    - labelname: operationTableIndex
+      type: counter
+  - name: dCumulativeCount
+    oid: 1.3.6.1.4.1.36733.1.2.3.4.1.1
+    type: counter
+    help: Cumulative value - 1.3.6.1.4.1.36733.1.2.3.4.1.1
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+    - labelname: operationTableIndex
+      type: counter
+  - name: dAverage
+    oid: 1.3.6.1.4.1.36733.1.2.3.4.1.2
+    type: gauge
+    help: Average value - 1.3.6.1.4.1.36733.1.2.3.4.1.2
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+    - labelname: operationTableIndex
+      type: counter
+  - name: dMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.3.4.1.3
+    type: counter
+    help: Minimum value - 1.3.6.1.4.1.36733.1.2.3.4.1.3
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+    - labelname: operationTableIndex
+      type: counter
+  - name: dMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.3.4.1.4
+    type: counter
+    help: Maximum value - 1.3.6.1.4.1.36733.1.2.3.4.1.4
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+    - labelname: operationTableIndex
+      type: counter
+  - name: totalCount
+    oid: 1.3.6.1.4.1.36733.1.2.3.5.1.1
+    type: counter
+    help: Total count of tokens of the specified type in OpenAM - 1.3.6.1.4.1.36733.1.2.3.5.1.1
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+  - name: averageDuration
+    oid: 1.3.6.1.4.1.36733.1.2.3.5.1.2
+    type: counter
+    help: Average duration of tokens of the specified type in OpenAM in seconds -
+      1.3.6.1.4.1.36733.1.2.3.5.1.2
+    indexes:
+    - labelname: tokenTableIndex
+      type: counter
+  - name: rateOfDeletedSessions
+    oid: 1.3.6.1.4.1.36733.1.2.3.6
+    type: gauge
+    help: Rate of deleted sessions per reaper run - 1.3.6.1.4.1.36733.1.2.3.6
+  - name: successCumulative
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.1.1
+    type: counter
+    help: Cumulative number of successful connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.1.1
+  - name: successAverage
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.1.2
+    type: gauge
+    help: Average rate of successful connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.1.2
+  - name: successMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.1.3
+    type: counter
+    help: Minimum rate of successful connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.1.3
+  - name: successMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.1.4
+    type: counter
+    help: Maximum rate of successful connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.1.4
+  - name: failureCumulative
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.2.1
+    type: counter
+    help: Cumulative number of failed connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.2.1
+  - name: failureAverage
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.2.2
+    type: gauge
+    help: Average rate of failed connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.2.2
+  - name: failureMinimum
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.2.3
+    type: counter
+    help: Minimum rate of failed connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.2.3
+  - name: failureMaximum
+    oid: 1.3.6.1.4.1.36733.1.2.3.7.2.4
+    type: counter
+    help: Maximum rate of failed connections made by connection pool - 1.3.6.1.4.1.36733.1.2.3.7.2.4
